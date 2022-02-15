@@ -1,0 +1,3 @@
+[gitlabintegration]
+GITLAB_URL = GITLAB_URL
+GITLAB_TOKEN = GITLAB_TOKEN
