@@ -137,7 +137,7 @@ class PluginGitlabIntegrationCategoriesProjects extends CommonDBTM
     {
         $url = "https://forge.sirailgroup.com/api/v4/projects";
         $headers = array(
-            "PRIVATE-TOKEN: f2oXXH_jT-Pzy4gUzEHs"
+            "PRIVATE-TOKEN: gitlab token"
         );
 
         $curl = curl_init();
