@@ -1,3 +1,8 @@
+<div align="center">
+    <img src="https://raw.githubusercontent.com/faizaleticia/gitlabintegration/master/img/glpi_logo.png" width="300px"/>
+</div>
+
+
 # Gitlab Integration
 
 Gitlab Integration is a plugin to use into GLPI - Gestionnaire Libre de Parc Informatique when the tickets needs to integrate with Gitlab.
