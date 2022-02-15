@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: GLPI Plugin - Gitlab Integration\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-12 09:43+0200\n"
+"PO-Revision-Date: 2019-08-12 09:43+0000\n"
+"Last-Translator: Zohair LAABANE TLEMCANI <zohair.tlemcani@sirailgroup.com>\n"
+"Language-Team: French (France)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: profiles.class.php:93
+msgid "Permissions"
+msgstr "Permissions"
+
+#: profiles.class.php:148
+msgid "Profile"
+msgstr "Profil"
+
+#: profiles.class.php:146
+msgid "New user profile to give Gitlab permission"
+msgstr "Nouveau utilisateur a donner permission Gitlab"
+
+#: profiles.class.php:182
+#: profiles.class.php:189
+#: profiles.class.php:248
+msgid "Actions"
+msgstr "Actions"
+
+#: profiles.class.php:298
+msgid "Created By"
+msgstr "Crée par"
+
+#: setup.php:32
+msgid "Gitlab Integration"
+msgstr "Gitlab Integration"
+
+#: profile.class.php:301
+msgid "Created At"
+msgstr "Crée à"
+
+#: profile.class.php:157
+msgid "Add"
+msgstr "Ajouter"
+
+#: menu.class.php:45
+msgid "Permissions Gitlab"
+msgstr "Permissions Gitlab"
+
+#: menu.class.php:426
+msgid "Permanently Delete"
+msgstr "Suprimmer définitivement"
+
+#: profile.php:426
+#: profile.php:35
+msgid "Permission granted with successfully!"
+msgstr "Permission accordée avec succès!"
+
+#: issue.php:40
+msgid "Issue created successfully!"
+msgstr "Issue créé avec succès!"
+
+#: issue.php:38
+msgid "%2s created Issue"
+msgstr "%2s Issue crée"
+
+#: issue.php:42
+msgid "Problem to create issue. Verify logs for more information!"
+msgstr "Problème pour créer un issue. Vérifiez les logs pour plus d'informations!"
+
+#: profile.php:23
+msgid "The selected profile already has permission. Verify logs for more information!"
+msgstr "Le profil sélectionné dispose déjà d'une autorisation. Vérifiez les logs pour plus d'informations !"
+
+#: profile.php:33
+msgid "%2s granted permission for profile "
+msgstr "%2s autorisation accordée pour le profil "
+
+#: profile.php:51
+msgid "%2s removed permission for id "
+msgstr "%2s autorisation supprimée pour id "
+
+#: itemform.class.php:59
+msgid "Gitlab Project"
+msgstr "Projet Gitlab"
+
+#: profiles.class.php:186
+msgid "No selected items"
+msgstr "Aucun élément sélectionné"
+
+#: profile.php:53
+msgid "Permission removed with successfully!"
+msgstr "Autorisation supprimée avec succès!"
+
+#: itemform.class.php:75
+msgid "Create Issue"
+msgstr "Creer Issue"
+
+#: itemform.class.php:73
+msgid "Issue already created for the selected project."
+msgstr "Issue déjà créé pour le projet sélectionné."

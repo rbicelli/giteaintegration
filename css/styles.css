@@ -1,0 +1,80 @@
+.primary-button {
+    padding: 5px;
+    cursor: pointer;
+    height: auto;
+    font: bold 12px Arial, Helvetica;
+    color: #8f5a0a !important;
+    background-color: #fec95c;
+    border: 0;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    font-size: 12px !important;
+}
+
+.primary-button:hover {
+    opacity: 0.9;
+    box-shadow: 0px 1px 1px #999;
+}
+
+.primary-button a:hover {
+    color:red !important;
+}
+
+.left {
+    text-align:left; 
+}
+
+.top-form {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.form-custom {
+    width: 75% !important;
+    font-family: 'Bitstream Vera Sans', Verdana, Tahoma, 'Sans serif';
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.table-form {
+    display: flex !important;
+    justify-content: center;
+}
+
+.label-form {
+    width: 15%;
+    display: inline-block;
+}
+
+.value-form {
+    width: 35%;
+    display: inline-block;
+    padding: 5px;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.body-dialog {
+    visibility: hidden;
+}
+
+.logo {
+    transition-duration: .4s;
+}
+
+.logo:hover {   
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
