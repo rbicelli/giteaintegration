@@ -78,8 +78,8 @@ function plugin_gitlabintegration_create_integration($DB)
 				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
 		$DB->queryOrDie($query, $DB->error());
 
-		$query = "ALTER TABLE `glpi_plugin_gitlab_integration` 
-	                ADD CONSTRAINT `fk_gitlab_ticket` 
+		$query = "ALTER TABLE `glpi_plugin_gitlab_integration`
+	                ADD CONSTRAINT `fk_gitlab_ticket`
 					FOREIGN KEY (`ticket_id`) REFERENCES `glpi_tickets` (`id`)";
 		$DB->queryOrDie($query, $DB->error());
 	}
@@ -97,8 +97,8 @@ function plugin_gitlabintegration_create_profiles($DB)
 				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
 		$DB->queryOrDie($query, $DB->error());
 
-		$query = "ALTER TABLE `glpi_plugin_gitlab_profiles_users` 
-	                ADD CONSTRAINT `fk_gitlab_profile` 
+		$query = "ALTER TABLE `glpi_plugin_gitlab_profiles_users`
+	                ADD CONSTRAINT `fk_gitlab_profile`
 					FOREIGN KEY (`profile_id`) REFERENCES `glpi_profiles` (`id`)";
 		$DB->queryOrDie($query, $DB->error());
 
@@ -123,8 +123,8 @@ function plugin_gitlabintegration_create_projects($DB)
 				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
 		$DB->queryOrDie($query, $DB->error());
 
-		$query = "ALTER TABLE `glpi_plugin_gitlab_projects` 
-	                ADD CONSTRAINT `fk_gitlab_categories` 
+		$query = "ALTER TABLE `glpi_plugin_gitlab_projects`
+	                ADD CONSTRAINT `fk_gitlab_categories`
 					FOREIGN KEY (`category_id`) REFERENCES `glpi_itilcategories` (`id`)";
 		$DB->queryOrDie($query, $DB->error());
 	}
@@ -141,8 +141,8 @@ function plugin_gitlabintegration_create_parameters($DB)
 				) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci";
 		$DB->queryOrDie($query, $DB->error());
 
-		$query = "ALTER TABLE `glpi_plugin_gitlab_parameters` 
-	                ADD CONSTRAINT `uk_name` 
+		$query = "ALTER TABLE `glpi_plugin_gitlab_parameters`
+	                ADD CONSTRAINT `uk_name`
 					UNIQUE (`name`) ";
 		$DB->queryOrDie($query, $DB->error());
 	}
