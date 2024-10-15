@@ -8,18 +8,18 @@ $start = $_GET['start'];
 Session::checkLoginUser();
 
 Html::header(
-    PluginGitlabIntegrationDefaultProject::getTypeName(),
+    PluginGiteaIntegrationDefaultProject::getTypeName(),
     $_SERVER['PHP_SELF'],
     "admin",
-    "PluginGitlabIntegrationDefaultProjectMenu",
+    "PluginGiteaIntegrationDefaultProjectMenu",
     "defaultProject"
 );
-PluginGitlabIntegrationDefaultProject::title();
-// Search::show('PluginGitlabIntegrationDefaultProject');
-PluginGitlabIntegrationDefaultProject::configPage($start);
-PluginGitlabIntegrationDefaultProject::massiveActions($start);
-PluginGitlabIntegrationDefaultProject::configPage($start);
+PluginGiteaIntegrationDefaultProject::title();
+// Search::show('PluginGiteaIntegrationDefaultProject');
+PluginGiteaIntegrationDefaultProject::configPage($start);
+PluginGiteaIntegrationDefaultProject::massiveActions($start);
+PluginGiteaIntegrationDefaultProject::configPage($start);
 
 Html::footer();
 
-PluginGitlabIntegrationDefaultProject::dialogActions();
+PluginGiteaIntegrationDefaultProject::dialogActions();

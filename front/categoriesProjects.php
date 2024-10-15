@@ -8,18 +8,18 @@ $start = $_GET['start'];
 Session::checkLoginUser();
 
 Html::header(
-    PluginGitlabIntegrationCategoriesProjects::getTypeName(),
+    PluginGiteaIntegrationCategoriesProjects::getTypeName(),
     $_SERVER['PHP_SELF'],
     "admin",
-    "PluginGitlabIntegrationCategoriesProjectsMenu",
+    "PluginGiteaIntegrationCategoriesProjectsMenu",
     "categoriesProjects"
 );
-PluginGitlabIntegrationCategoriesProjects::title();
-// Search::show('PluginGitlabIntegrationCategoriesProjects');
-PluginGitlabIntegrationCategoriesProjects::configPage($start);
-PluginGitlabIntegrationCategoriesProjects::massiveActions($start);
-PluginGitlabIntegrationCategoriesProjects::configPage($start);
+PluginGiteaIntegrationCategoriesProjects::title();
+// Search::show('PluginGiteaIntegrationCategoriesProjects');
+PluginGiteaIntegrationCategoriesProjects::configPage($start);
+PluginGiteaIntegrationCategoriesProjects::massiveActions($start);
+PluginGiteaIntegrationCategoriesProjects::configPage($start);
 
 Html::footer();
 
-PluginGitlabIntegrationCategoriesProjects::dialogActions();
+PluginGiteaIntegrationCategoriesProjects::dialogActions();

@@ -1,62 +1,67 @@
 <?php
+define('PLUGIN_GITINTEGRATION_VERSION', '0.0.1');
 
-function plugin_init_gitlabintegration()
+// Minimal GLPI version, inclusive
+define("PLUGIN_GITINTEGRATION_MIN_GLPI_VERSION", "10.0.0");
+// Maximum GLPI version, exclusive
+define("PLUGIN_GITINTEGRATION_MAX_GLPI_VERSION", "10.0.99");
+
+function plugin_init_giteaintegration()
 {
 
 	global $PLUGIN_HOOKS, $CFG_GLPI;
 
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/itemform.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/eventlog.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/parameters.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/gitlabintegration.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/permissionsMenu.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/categoriesProjectsMenu.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/defaultProjectMenu.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/profiles.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/categoriesProjects.class.php");
-	include_once(GLPI_ROOT . "/plugins/gitlabintegration/inc/defaultProject.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/itemform.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/eventlog.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/parameters.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/giteaintegration.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/permissionsMenu.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/categoriesProjectsMenu.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/defaultProjectMenu.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/profiles.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/categoriesProjects.class.php");
+	include_once(GLPI_ROOT . "/plugins/giteaintegration/inc/defaultProject.class.php");
 
-	$PLUGIN_HOOKS['add_css']['gitlabintegration'][] = "css/styles.css";
-	$PLUGIN_HOOKS['add_javascript']['gitlabintegration'][] = 'js/buttonsFunctions.js';
+	$PLUGIN_HOOKS['add_css']['giteaintegration'][] = "css/styles.css";
+	$PLUGIN_HOOKS['add_javascript']['giteaintegration'][] = 'js/buttonsFunctions.js';
 
 	// CSRF compliance : All actions must be done via POST and forms closed by Html::closeForm();
-	$PLUGIN_HOOKS['csrf_compliant']['gitlabintegration'] = true;
+	$PLUGIN_HOOKS['csrf_compliant']['giteaintegration'] = true;
 
-	if (class_exists('PluginGitlabIntegrationItemForm')) {
-		$PLUGIN_HOOKS['post_item_form']['gitlabintegration'] = ['PluginGitlabIntegrationItemForm', 'postItemForm'];
+	if (class_exists('PluginGiteaIntegrationItemForm')) {
+		$PLUGIN_HOOKS['post_item_form']['giteaintegration'] = ['PluginGiteaIntegrationItemForm', 'postItemForm'];
 	}
 
 	// add entry to configuration menu
-	$PLUGIN_HOOKS['menu_toadd']['gitlabintegration']['admin'] = ['PluginGitlabIntegrationPermissionsMenu', 'PluginGitlabIntegrationCategoriesProjectsMenu', 'PluginGitlabIntegrationDefaultProjectMenu'];
+	$PLUGIN_HOOKS['menu_toadd']['giteaintegration']['admin'] = ['PluginGiteasIntegrationPermissionsMenu', 'PluginGiteaIntegrationCategoriesProjectsMenu', 'PluginGiteaIntegrationDefaultProjectMenu'];
 }
 
 
-function plugin_version_gitlabintegration()
-{
-	global $DB, $LANG;
-
-	return array(
-		'name'			  => __('Gitlab Integration', 'gitlabintegration'),
-		'version' 		  => '1.0',
-		'author'		  => 'Zohair LAABANE TLEMCANI',
+function plugin_version_giteaintegration()
+{	
+	return [
+		'name'			  => 'Gitea Integration',
+		'version' 		  => PLUGIN_GITINTEGRATION_VERSION,
+		'author'		  => 'Riccardo Bicelli',
 		'license'		  => 'GPLv3+',
-		'homepage'		  => '',
-		'minGlpiVersion' => '9.4'
-	);
+		'homepage'		  => 'https://github.com/rbicelli/giteaintegration',
+		'requirements'    => [
+            'glpi' => [
+                'min' => PLUGIN_GITINTEGRATION_MIN_GLPI_VERSION,
+                'max' => PLUGIN_GITINTEGRATION_MAX_GLPI_VERSION,
+            ]
+		]
+	];
 }
 
 
-function plugin_gitlabintegration_check_prerequisites()
+function plugin_giteaintegration_check_prerequisites()
 {
-	if (GLPI_VERSION >= 9.4) {
-		return true;
-	} else {
-		echo "GLPI version NOT compatible. Requires GLPI >= 9.4";
-	}
+		return true;	
 }
 
 
-function plugin_gitlabintegration_check_config($verbose = false)
+function plugin_giteaintegration_check_config($verbose = false)
 {
 	if ($verbose) {
 		echo 'Installed / not configured';

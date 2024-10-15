@@ -5,13 +5,13 @@ include(GLPI_ROOT . "/inc/includes.php");
 Session::checkLoginUser();
 
 Html::header(
-    PluginGitlabIntegrationDefaultProject::getTypeName(),
+    PluginGiteaIntegrationDefaultProject::getTypeName(),
     $_SERVER['PHP_SELF'],
     "admin",
-    "PluginGitlabIntegrationDefaultProjectMenu",
+    "PluginGiteaIntegrationDefaultProjectMenu",
     "defaultProject"
 );
 
-PluginGitlabIntegrationDefaultProject::showForm();
+PluginGiteaIntegrationDefaultProject::showForm();
 
 Html::footer();

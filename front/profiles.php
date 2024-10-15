@@ -8,18 +8,18 @@ $start = $_GET['start'];
 Session::checkLoginUser();
 
 Html::header(
-    PluginGitlabIntegrationProfiles::getTypeName(),
+    PluginGiteaIntegrationProfiles::getTypeName(),
     $_SERVER['PHP_SELF'],
     "admin",
-    "PluginGitlabIntegrationPermissionsMenu",
+    "PluginGiteaIntegrationPermissionsMenu",
     "profiles"
 );
-PluginGitlabIntegrationProfiles::title();
-// Search::show('PluginGitlabIntegrationProfiles');
-PluginGitlabIntegrationProfiles::configPage($start);
-PluginGitlabIntegrationProfiles::massiveActions($start);
-PluginGitlabIntegrationProfiles::configPage($start);
+PluginGiteaIntegrationProfiles::title();
+// Search::show('PluginGiteaIntegrationProfiles');
+PluginGiteaIntegrationProfiles::configPage($start);
+PluginGiteaIntegrationProfiles::massiveActions($start);
+PluginGiteaIntegrationProfiles::configPage($start);
 
 Html::footer();
 
-PluginGitlabIntegrationProfiles::dialogActions();
+PluginGiteaIntegrationProfiles::dialogActions();

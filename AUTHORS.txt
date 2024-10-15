@@ -1,8 +1,7 @@
 
 **********************************************************************
+- Riccardo Bicelli
 
-- Zohair Laabane Tlemcani
-
-- Based Of (Fáiza Letícia Schoeninger)
+- Based Of (Zohair Laabane Tlemcani, Fáiza Letícia Schoeninger)
 
 **********************************************************************
