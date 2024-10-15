@@ -137,7 +137,7 @@ class PluginGiteaIntegrationProfiles extends CommonDBTM
     *
     * @return void
     */
-   public static function showForm()
+   public function showForm()
    {
       echo '<div class="glpi_tabs new_form_tabs">';
       echo '   <div id="tabspanel" class="center-h">';
