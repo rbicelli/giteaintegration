@@ -27,10 +27,10 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
- * Summary of PluginGitlabIntegrationPermissions
+ * Summary of PluginGiteaIntegrationPermissions
  * */
 
-class PluginGitlabIntegrationPermissionsMenu extends CommonGLPI
+class PluginGiteaIntegrationPermissionsMenu extends CommonGLPI
 {
 
     static $rightname = 'entity';
@@ -44,7 +44,7 @@ class PluginGitlabIntegrationPermissionsMenu extends CommonGLPI
      */
     static function getMenuName()
     {
-        return __("Gitlab Permissions", "gitlabintegration");
+        return __("Gitea Permissions", "gitlabintegration");
     }
 
     /**
@@ -66,7 +66,7 @@ class PluginGitlabIntegrationPermissionsMenu extends CommonGLPI
         $menu['title'] = self::getMenuName();
         $menu['page']  = "$front_fields/profiles.php";
 
-        $itemtypes = ['PluginGitlabIntegrationProfiles' => 'profiles'];
+        $itemtypes = ['PluginGiteaIntegrationProfiles' => 'profiles'];
 
         foreach ($itemtypes as $itemtype => $option) {
             $menu['options'][$option]['title']           = $itemtype::getTypeName(2);

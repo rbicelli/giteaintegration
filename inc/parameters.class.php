@@ -28,9 +28,9 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
- * Summary of PluginGitlabIntegrationParameters
+ * Summary of PluginGiteaIntegrationParameters
  * */
-class PluginGitlabIntegrationParameters {
+class PluginGiteaIntegrationParameters {
 
     /**
     * Display contents at the begining of parameters.

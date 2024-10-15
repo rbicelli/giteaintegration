@@ -28,9 +28,9 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
- * Summary of PluginGitlabIntegrationItemForm
+ * Summary of PluginGiteaIntegrationItemForm
  * */
-class PluginGitlabIntegrationItemForm
+class PluginGiteaIntegrationItemForm
 {
 
    /**
@@ -56,7 +56,7 @@ class PluginGitlabIntegrationItemForm
          $label = $type === 'incident' ? 'incident' : '';
          $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . "/glpi/front/ticket.form.php?id=" . $item->getField('id');
          $category_id = $item->getField('itilcategories_id');
-         $projects = PluginGitlabIntegrationCategoriesProjects::projects();
+         $projects = PluginGiteaIntegrationCategoriesProjects::projects();
          $firstElt = ($item::getType() == Ticket::getType() ? 'th' : 'td');
 
          $selectedProject = $category_id != 0 ? $DB->request('glpi_plugin_gitlab_projects', ['category_id' => $category_id])->next() : '';
@@ -74,7 +74,7 @@ class PluginGitlabIntegrationItemForm
          echo "</tr>";
 
          echo "<tr><$firstElt>";
-         echo '<label>' . __('Gitlab Project', 'gitlabintegration') . '</label>';
+         echo '<label>' . __('Gitea Project', 'gitlabintegration') . '</label>';
          echo "</$firstElt><td>";
 
          echo "<select style='padding: 5px' name='project_id' id='project_id'>";
@@ -182,7 +182,7 @@ class PluginGitlabIntegrationItemForm
 
       $values = [];
 
-      $result = PluginGitlabIntegrationGitlabIntegration::getProjects();
+      $result = PluginGiteaIntegrationGiteaIntegration::getProjects();
 
       foreach ($result as $key => $value) {
          $values[$value->id] = $value->name_with_namespace;

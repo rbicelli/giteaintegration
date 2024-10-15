@@ -29,10 +29,10 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
 define('PLUGIN_ROOT', '../../..');
 
 /**
- * Summary of PluginGitlabIntegrationProfiles
+ * Summary of PluginGiteaIntegrationProfiles
  * */
 
-class PluginGitlabIntegrationProfiles extends CommonDBTM
+class PluginGiteaIntegrationProfiles extends CommonDBTM
 {
    static $rightname = 'profiles';
 
@@ -62,11 +62,11 @@ class PluginGitlabIntegrationProfiles extends CommonDBTM
       echo "<tr>";
       echo "<td width='45px'>";
       echo "<a href='https://forge.sirailgoup.com' target='_blank'>";
-      echo "<img class='logo' src='" . PLUGIN_ROOT . "/plugins/gitlabintegration/img/just-logo.png' height='35px' alt='Gitlab Forge' title='Gitlab Forge'>";
+      echo "<img class='logo' src='" . PLUGIN_ROOT . "/plugins/gitlabintegration/img/just-logo.png' height='35px' alt='Gitea Forge' title='Gitea Forge'>";
       echo "</a>";
       echo "</td>";
       echo "<td>";
-      echo "<a class='vsubmit' href='https://forge.sirailgoup.com' target='_blank'>Gitlab Forge</a>";
+      echo "<a class='vsubmit' href='https://forge.sirailgoup.com' target='_blank'>Gitea Forge</a>";
       echo "</td>";
       echo "</tr>";
       echo "</tbody></table>";
@@ -151,7 +151,7 @@ class PluginGitlabIntegrationProfiles extends CommonDBTM
       echo '           </ul>';
       echo '           <div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom table-form" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="true" aria-hidden="false">';
       echo '               <div class="form-custom">';
-      echo '                   <div class="top-form">' . __('New user profile to give Gitlab permission', 'gitlabintegration') . '</div>';
+      echo '                   <div class="top-form">' . __('New user profile to give Gitea permission', 'gitlabintegration') . '</div>';
       echo '                   <div class="flex">';
       echo '                     <div class="top-form left label-form"><label for="dropdown__profiles_id$profilerand">' .  __('Profile', 'gitlabintegration') . '</label></div>';
       echo '                     <div class="left value-form">';

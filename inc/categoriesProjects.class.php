@@ -29,10 +29,10 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
 define('PLUGIN_ROOT', '../../..');
 
 /**
- * Summary of PluginGitlabIntegrationCategoriesProjects
+ * Summary of PluginGiteaIntegrationCategoriesProjects
  * */
 
-class PluginGitlabIntegrationCategoriesProjects extends CommonDBTM
+class PluginGiteaIntegrationCategoriesProjects extends CommonDBTM
 {
     static $rightname = 'categoriesProjects';
 
@@ -62,11 +62,11 @@ class PluginGitlabIntegrationCategoriesProjects extends CommonDBTM
         echo "<tr>";
         echo "<td width='45px'>";
         echo "<a href='https://forge.sirailgoup.com' target='_blank'>";
-        echo "<img class='logo' src='" . PLUGIN_ROOT . "/plugins/gitlabintegration/img/just-logo.png' height='35px' alt='Gitlab Forge' title='Gitlab Forge'>";
+        echo "<img class='logo' src='" . PLUGIN_ROOT . "/plugins/gitlabintegration/img/just-logo.png' height='35px' alt='Gitea Forge' title='Gitea Forge'>";
         echo "</a>";
         echo "</td>";
         echo "<td>";
-        echo "<a class='vsubmit' href='https://forge.sirailgoup.com' target='_blank'>Gitlab Forge</a>";
+        echo "<a class='vsubmit' href='https://forge.sirailgoup.com' target='_blank'>Gitea Forge</a>";
         echo "</td>";
         echo "</tr>";
         echo "</tbody></table>";
@@ -131,7 +131,7 @@ class PluginGitlabIntegrationCategoriesProjects extends CommonDBTM
     }
 
     /** 
-     *Genrate a combobox for Gitlab Projects 
+     *Genrate a combobox for Gitea Projects 
      */
     public static function projects()
     {
@@ -190,9 +190,9 @@ class PluginGitlabIntegrationCategoriesProjects extends CommonDBTM
         echo '           </ul>';
         echo '           <div id="ui-tabs-1" class="ui-tabs-panel ui-widget-content ui-corner-bottom table-form" aria-live="polite" aria-labelledby="ui-id-2" role="tabpanel" aria-expanded="true" aria-hidden="false">';
         echo '               <div class="form-custom">';
-        echo '                   <div class="top-form">' . __('Associate a Gitlab Project to a Category', 'gitlabintegration') . '</div>';
+        echo '                   <div class="top-form">' . __('Associate a Gitea Project to a Category', 'gitlabintegration') . '</div>';
         echo '                   <div class="flex">';
-        echo '                     <div class="top-form left label-form"><label for="gitlabProject">' .  __('Gitlab Project', 'gitlabintegration') . '</label></div>';
+        echo '                     <div class="top-form left label-form"><label for="gitlabProject">' .  __('Gitea Project', 'gitlabintegration') . '</label></div>';
         echo '                     <div class="left value-form">';
         echo '                     <select id="gitlabProject" style="padding: 5px">';
         foreach ($projects as $project) {
@@ -312,7 +312,7 @@ class PluginGitlabIntegrationCategoriesProjects extends CommonDBTM
         echo '<tbody id="principal_' . $id . '">';
         echo '<tr class="tab_bg_2">';
         echo '<th class="left" style="width:30%">';
-        echo '<a href="#">' . __('Gitlab Project', 'gitlabintegration') . '</a>';
+        echo '<a href="#">' . __('Gitea Project', 'gitlabintegration') . '</a>';
         echo '</th>';
         echo '<th class="left" style="width:35%">';
         echo '<a href="#">' . __('GLPI Category', 'gitlabintegration') . '</a>';

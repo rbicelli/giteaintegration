@@ -13,19 +13,19 @@ $ticketDueDate = $_POST['ticketDueDate'];
 $ticketType = $_POST['ticketType'];
 $ticketLabel = $_POST['ticketLabel'];
 
-$result = $DB->request('glpi_plugin_gitlab_integration', ['ticket_id' => $ticketId, 'gitlab_project_id' => $selectedProject]);
-$findCategoryProject = $DB->request('glpi_plugin_gitlab_projects', ['category_id' => $selectedCategory]);
+$result = $DB->request('glpi_plugin_gitea_integration', ['ticket_id' => $ticketId, 'gitea_project_id' => $selectedProject]);
+$findCategoryProject = $DB->request('glpi_plugin_gitea_projects', ['category_id' => $selectedCategory]);
 
 if ($result->count() > 0) {
     $response = ['res' => false];
     echo json_encode($response);
 } else {
-    if (class_exists('PluginGitlabIntegrationParameters')) {
+    if (class_exists('PluginGiteaIntegrationParameters')) {
         $DB->insert(
-            'glpi_plugin_gitlab_integration',
+            'glpi_plugin_gitea_integration',
             [
                 'ticket_id'         => $ticketId,
-                'gitlab_project_id' => $selectedProject
+                'gitea_project_id' => $selectedProject
             ]
         );
 
@@ -40,11 +40,11 @@ if ($result->count() > 0) {
         $label = $ticketLabel;
         $assignedTo = $ticketAssignedTo;
 
-        PluginGitlabIntegrationGitlabIntegration::CreateIssue($selectedProject, $title, $description, $dueDate, $type, $label);
+        PluginGiteaIntegrationGiteaIntegration::CreateIssue($selectedProject, $title, $description, $dueDate, $type, $label);
 
-        PluginGitlabIntegrationEventLog::Log($ticketId, 'ticket', $_SESSION["glpi_currenttime"], 'issue', 4, sprintf(__('%2s created Issue', 'gitlabintegration'), $_SESSION["glpiname"]));
+        PluginGiteaIntegrationEventLog::Log($ticketId, 'ticket', $_SESSION["glpi_currenttime"], 'issue', 4, sprintf(__('%2s created Issue', 'giteaintegration'), $_SESSION["glpiname"]));
 
-        Session::addMessageAfterRedirect(__('Issue created successfully!', 'gitlabintegration'));
+        Session::addMessageAfterRedirect(__('Issue created successfully!', 'giteaintegration'));
 
         $response = ['res' => true];
         echo json_encode($response);

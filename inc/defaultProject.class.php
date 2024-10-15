@@ -29,10 +29,10 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
 define('PLUGIN_ROOT', '../../..');
 
 /**
- * Summary of PluginGitlabIntegrationProfiles
+ * Summary of PluginGiteaIntegrationProfiles
  * */
 
-class PluginGitlabIntegrationDefaultProject extends CommonDBTM
+class PluginGiteaIntegrationDefaultProject extends CommonDBTM
 {
     static $rightname = 'defaultProject';
 
@@ -62,11 +62,11 @@ class PluginGitlabIntegrationDefaultProject extends CommonDBTM
         echo "<tr>";
         echo "<td width='45px'>";
         echo "<a href='https://forge.sirailgoup.com' target='_blank'>";
-        echo "<img class='logo' src='" . PLUGIN_ROOT . "/plugins/gitlabintegration/img/just-logo.png' height='35px' alt='Gitlab Forge' title='Gitlab Forge'>";
+        echo "<img class='logo' src='" . PLUGIN_ROOT . "/plugins/gitlabintegration/img/just-logo.png' height='35px' alt='Gitea Forge' title='Gitea Forge'>";
         echo "</a>";
         echo "</td>";
         echo "<td>";
-        echo "<a class='vsubmit' href='https://forge.sirailgoup.com' target='_blank'>Gitlab Forge</a>";
+        echo "<a class='vsubmit' href='https://forge.sirailgoup.com' target='_blank'>Gitea Forge</a>";
         echo "</td>";
         echo "</tr>";
         echo "</tbody></table>";
@@ -139,7 +139,7 @@ class PluginGitlabIntegrationDefaultProject extends CommonDBTM
      */
     public static function showForm()
     {
-        $projects = PluginGitlabIntegrationCategoriesProjects::projects();
+        $projects = PluginGiteaIntegrationCategoriesProjects::projects();
         echo '<div class="glpi_tabs new_form_tabs">';
         echo '   <div id="tabspanel" class="center-h">';
         echo '      <div class="center vertical ui-tabs ui-widget ui-widget-content ui-corner-all ui-tabs-vertical ui-helper-clearfix ui-corner-left">';
@@ -154,7 +154,7 @@ class PluginGitlabIntegrationDefaultProject extends CommonDBTM
         echo '               <div class="form-custom">';
         echo '                   <div class="top-form">' . __('Select a Default Project', 'gitlabintegration') . '</div>';
         echo '                   <div class="flex">';
-        echo '                     <div class="top-form left label-form"><label for="default_project">' .  __('Gitlab Project', 'gitlabintegration') . '</label></div>';
+        echo '                     <div class="top-form left label-form"><label for="default_project">' .  __('Gitea Project', 'gitlabintegration') . '</label></div>';
         echo '                     <div class="left value-form">';
         echo '                       <select id="default_project" name="default_project" style="padding:5px">';
         foreach ($projects as $project) {
@@ -248,7 +248,7 @@ class PluginGitlabIntegrationDefaultProject extends CommonDBTM
         echo '<tbody>';
         echo '<tr class="tab_bg_2">';
         echo '<th class="left" style="width:30%">';
-        echo '<a href="#">' . __('Gitlab Project', 'gitlabintegration') . '</a>';
+        echo '<a href="#">' . __('Gitea Project', 'gitlabintegration') . '</a>';
         echo '</th>';
         echo '<th class="left" style="width:35%">';
         echo '<a href="#">' . __('Action', 'gitlabintegration') . '</a>';

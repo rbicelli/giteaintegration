@@ -28,9 +28,9 @@ along with GLPI. If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
- * Summary of PluginGitlabIntegrationGitlabIntegration
+ * Summary of PluginGiteaIntegrationGiteaIntegration
  * */
-class PluginGitlabIntegrationGitlabIntegration
+class PluginGiteaIntegrationGiteaIntegration
 {
 
     /**
@@ -42,7 +42,7 @@ class PluginGitlabIntegrationGitlabIntegration
      */
     static public function CreateIssue($selectedProject, $title, $description, $dueDate, $type, $label)
     {
-        $parameters = PluginGitlabIntegrationParameters::getParameters();
+        $parameters = PluginGiteaIntegrationParameters::getParameters();
 
         $url = "$parameters[url]api/v4/projects/$selectedProject/issues";
 
@@ -66,7 +66,7 @@ class PluginGitlabIntegrationGitlabIntegration
         self::apiPost($query, $url, $headers);
 
         $logIssue = "[ISSUE CREATED: IID: $iid, PROJECT ID: $selectedProject, TITLE: ' $title ', DESCRIPTION: ' $description ']";
-        PluginGitlabIntegrationEventLog::CreatedIssueLog($logIssue);
+        PluginGiteaIntegrationEventLog::CreatedIssueLog($logIssue);
     }
 
     static public function apiPost($query, $url, $headers)
@@ -86,7 +86,7 @@ class PluginGitlabIntegrationGitlabIntegration
 
             curl_close($curl);
         } catch (Exception $e) {
-            PluginGitlabIntegrationParameters::ErrorLog($e->getMessage());
+            PluginGiteaIntegrationParameters::ErrorLog($e->getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ class PluginGitlabIntegrationGitlabIntegration
      */
     static public function getProjects()
     {
-        $parameters = PluginGitlabIntegrationParameters::getParameters();
+        $parameters = PluginGiteaIntegrationParameters::getParameters();
 
         $url = "$parameters[url]api/v4/projects?per_page=100&order_by=name";
 
@@ -137,7 +137,7 @@ class PluginGitlabIntegrationGitlabIntegration
      */
     static public function getProjectMembers($project)
     {
-        $parameters = PluginGitlabIntegrationParameters::getParameters();
+        $parameters = PluginGiteaIntegrationParameters::getParameters();
 
         $url = "$parameters[url]api/v4/projects/$project/members";
 
@@ -168,7 +168,7 @@ class PluginGitlabIntegrationGitlabIntegration
                 $iid = 1;
             }
         } catch (Exception $e) {
-            PluginGitlabIntegrationParameters::ErrorLog($e->getMessage());
+            PluginGiteaIntegrationParameters::ErrorLog($e->getMessage());
         }
 
         return $iid;

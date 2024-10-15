@@ -1,5 +1,5 @@
 const associate = () => {
-  let projectId = document.getElementById("gitlabProject").value;
+  let projectId = document.getElementById("giteaProject").value;
   let categoryId = document.getElementById("glpiCategory").value;
 
   jQuery
@@ -38,7 +38,7 @@ const createIssue = (
   jQuery
     .ajax({
       type: "POST",
-      url: "../plugins/gitlabintegration/ajax/issue.php",
+      url: "../plugins/giteaintegration/ajax/issue.php",
       data: {
         selectedProject: selectedProject,
         selectedCategory: selectedCategory,
